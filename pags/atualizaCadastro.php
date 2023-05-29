@@ -9,7 +9,7 @@ if (!isset($_SESSION['id'])) {
     $atualiza = new atualizaCurriculo();
     $dadosUser = $atualiza->dadosUser($_SESSION['id'], $_SESSION['email']);
 }
-// submit apagar curriculo
+
 if (isset($_POST['apagar'])) {
     $apagar = new atualizaCurriculo();
     $apagar = $apagar->apagarCurriculo($_SESSION['id']);
@@ -18,7 +18,7 @@ if (isset($_POST['apagar'])) {
         header('Location: ../index.php');
     }
 }
-// submit atualizar curriculo
+
 if (isset($_POST['enviar'])) {
     $atualizar = new atualizaCurriculo();
     $atualiza = $atualizar->atualizarCurriculo($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha'], $_POST['cpf'], $_POST['nascimento'], $_POST['sexo'], $_POST['estadoCivil'], $_POST['escolaridade'], $_POST['cursos'], $_POST['experienciaProfissional'], $_POST['salario']);
@@ -66,7 +66,6 @@ if (isset($_POST['enviar'])) {
                     <div class="col-12">
                         <h1 class="text-center">Atualizar Cadastro</h1>
                     </div>
-                    <!-- mesagem de sucesso ateração -->
                     <?php if (!empty($errorMsg)) : ?>
                         <div class="alert alert-danger">
                             <?php echo $errorMsg; ?>
@@ -78,7 +77,6 @@ if (isset($_POST['enviar'])) {
                             <?php echo $successMsg; ?>
                         </div>
                     <?php endif; ?>
-                    <!--  -->
                     <div class="col-12">
                         <label for="nome" class="form-label">Nome Completo</label>
                         <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $dadosUser[0]->Nome; ?>" required>
@@ -103,7 +101,6 @@ if (isset($_POST['enviar'])) {
                         <label for="nascimento" class="form-label">Data de Nascimento</label>
                         <input type="date" class="form-control" id="nascimento" name="nascimento" value="<?php echo $dadosUser[0]->DataNascimento; ?>" required>
                     </div>
-                    <!-- sexo -->
                     <div class="col-12">
                         <label for="sexo" class="form-label">Sexo</label>
                         <select class="form-select" aria-label="Default select example" id="sexo" name="sexo" required>
@@ -118,7 +115,6 @@ if (isset($_POST['enviar'])) {
                                                 } ?>>Outro</option>
                         </select>
                     </div>
-                    <!-- estado civil -->
                     <div class="col-12">
                         <label for="estadoCivil" class="form-label">Estado Civil</label>
                         <select class="form-select" aria-label="Default select example" id="estadoCivil" name="estadoCivil" required>
