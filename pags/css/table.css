@@ -1,0 +1,20 @@
+.tabela{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tabela td, .tabela th{
+    padding: 8px;
+}
+.list-ok {
+    color: white;
+    background-color: #107b37;
+}
+
+.list-loss {
+    color: rgb(14, 16, 39);
+    background-color: #0951d6;
+}
