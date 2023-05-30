@@ -22,7 +22,6 @@ class atualizaCurriculo
         $salarioString = str_replace(",", ".", $salarioString);
         $salarioDecimal = (float) $salarioString;
         $salario = number_format($salarioDecimal, 2, ".", "");
-        var_dump($salario);
         $atualizarCurriculo = new cadastroModel();
         $atualizarCurriculo = $atualizarCurriculo->atualizaCurriculo($nome, $email, $login, $senha, $cpf, $nascimento, $sexo, $estadoCivil, $escolaridade, $cursos, $experienciaProfissional, $salario);
         return $atualizarCurriculo;
